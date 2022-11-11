@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% from 'macro/form_errors.html' import form_field_errors %}
+<<<<<<< HEAD
 {% block title %}{{ super() }} - 登录{% endblock %}
 {% block header %}
   <link rel="stylesheet" href="/assets/style/login.css">
@@ -9,6 +10,14 @@
 {% block layout %}
 
 
+=======
+{% block title %}{{ super() }}-登录{% endblock %}
+{% block header %}
+  <link rel="stylesheet" href="./assets/style/login.css">
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1658093_nokjvsp8hws.css">
+{% endblock %}
+{% block layout %}
+>>>>>>> 0f0671da8c1f08f7141d72655d2b426353749f87
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
@@ -21,18 +30,30 @@
         </div>
         <!-- 表单登录 -->
         <form class="login-form box-wrap" method="POST" action="{{ url_for('accounts.login') }}">
+<<<<<<< HEAD
             <input type="hidden" name="next" value="{{ next_url|d('') }}">
             {{ form.csrf_token }}
+=======
+            <input type="hidden" name='next' value="{{ next_url }}">
+            {{ form.csrf_token }}
+
+>>>>>>> 0f0671da8c1f08f7141d72655d2b426353749f87
           <div class="form-group">
             <label for="id-user-name">用户名</label>
             {{ form.username }}
           </div>
+<<<<<<< HEAD
             {{ form_field_errors(form.username.errors) }}
+=======
+>>>>>>> 0f0671da8c1f08f7141d72655d2b426353749f87
           <div class="form-group">
             <label for="id-password">密码</label>
             {{ form.password }}
           </div>
+<<<<<<< HEAD
             {{ form_field_errors(form.password.errors) }}
+=======
+>>>>>>> 0f0671da8c1f08f7141d72655d2b426353749f87
           <div class="form-group">
             <button type="submit" class="btn btn-info btn-block btn-lg">登录</button>
           </div>
@@ -63,4 +84,9 @@
       </div>
     </div>
   </div>
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 0f0671da8c1f08f7141d72655d2b426353749f87
 {% endblock %}

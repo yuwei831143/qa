@@ -2,6 +2,7 @@ import os.path
 
 
 class Config(object):
+<<<<<<< HEAD
 
     """项目的配置文件"""
 
@@ -14,4 +15,15 @@ class Config(object):
 
     # 文件上传的根路径
 
+=======
+    """项目的配置文件"""
+
+
+    SQLALCHEMY_DATABASE_URI = "mysql+pymysql://root:a123456@127.0.0.1:3306/flask_qa"
+
+    SQLALCHEMY_TRACK_MODIFICATIONS = True
+
+    SECRET_KEY = 'asdfsdfsd'
+    # 文件上传目录
+>>>>>>> 0f0671da8c1f08f7141d72655d2b426353749f87
     MEDIA_ROOT = os.path.join(os.path.dirname(__file__),'medias')

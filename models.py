@@ -2,7 +2,11 @@ from datetime import datetime
 
 from flask_sqlalchemy import SQLAlchemy
 
+<<<<<<< HEAD
 from utils import constants
+=======
+import constants
+>>>>>>> 0f0671da8c1f08f7141d72655d2b426353749f87
 
 db = SQLAlchemy()
 
@@ -39,16 +43,32 @@ class User(db.Model):
 
     @property
     def is_active(self):
+<<<<<<< HEAD
         """有效的用户登录系统"""
+=======
+        """有效的用户才能登录系统"""
+>>>>>>> 0f0671da8c1f08f7141d72655d2b426353749f87
         return self.status == constants.UserStatus.USER_ACTIVE.value
 
     @property
     def is_anonymous(self):
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0f0671da8c1f08f7141d72655d2b426353749f87
         return False
 
     def get_id(self):
         return '{}'.format(self.id)
 
+<<<<<<< HEAD
+=======
+    @property
+    def love_count(self):
+        return self.question_love_list.count()
+
+
+>>>>>>> 0f0671da8c1f08f7141d72655d2b426353749f87
 
 
 
@@ -126,6 +146,7 @@ class Question(db.Model):
 
     @property
     def get_img_url(self):
+<<<<<<< HEAD
         return 'medias/' + self.img if self.img else ''
 
     @property
@@ -136,6 +157,18 @@ class Question(db.Model):
 
     @property
     def follow_count(self):
+=======
+        return 'medias/'+self.img if self.img else ''
+
+    @property
+    def comment_count(self):
+        """ 评论数量 """
+        return self.question_comment_list.filter_by(is_valid=True).count()
+
+    @property
+    def follow_count(self):
+        """关注数量"""
+>>>>>>> 0f0671da8c1f08f7141d72655d2b426353749f87
         return self.question_follow_list.filter_by(is_valid=True).count()
 
     @property
@@ -144,6 +177,7 @@ class Question(db.Model):
 
     @property
     def tags(self):
+<<<<<<< HEAD
         """文章标签"""
         return self.tag_list.filter_by(is_valid=True)
 
@@ -153,6 +187,10 @@ class Question(db.Model):
         return self.question_love_list.count()
 
 
+=======
+        return self.tag_list.filter_by(is_valid=True)
+
+>>>>>>> 0f0671da8c1f08f7141d72655d2b426353749f87
 class QuestionTags(db.Model):
     """ 问题下的标签 """
     __tablename__ = 'qa_question_tags'
@@ -170,8 +208,11 @@ class QuestionTags(db.Model):
     question = db.relationship('Question', backref=db.backref('tag_list', lazy='dynamic'))
 
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 0f0671da8c1f08f7141d72655d2b426353749f87
 class Answer(db.Model):
     """  问题的回答 """
     __tablename__ = 'qa_answer'
@@ -199,11 +240,18 @@ class Answer(db.Model):
 
 
     def comment_list(self,reply_id=None):
+<<<<<<< HEAD
         """有效的评论列表"""
+=======
+>>>>>>> 0f0671da8c1f08f7141d72655d2b426353749f87
         return self.answer_comment_list.filter_by(is_valid=True,reply_id=reply_id)
 
     @property
     def comment_count(self):
+<<<<<<< HEAD
+=======
+        """评论数量"""
+>>>>>>> 0f0671da8c1f08f7141d72655d2b426353749f87
         return self.answer_comment_list.filter_by(is_valid=True).count()
 
 
@@ -261,8 +309,11 @@ class AnswerLove(db.Model):
     question = db.relationship('Question', backref=db.backref('question_love_list', lazy='dynamic'))
 
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 0f0671da8c1f08f7141d72655d2b426353749f87
 class AnswerCollect(db.Model):
     """ 收藏的回答 """
     __tablename__ = 'qa_answer_collect'

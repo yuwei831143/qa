@@ -1,4 +1,5 @@
 {% extends 'base_layout.html' %}
+<<<<<<< HEAD
 {% block title %}{{ super() }} - 写文章{% endblock %}
 {% from 'macro/form_errors.html' import form_field_errors %}
 {% block header %}
@@ -6,6 +7,16 @@
   {% endblock %}
 {% block content %}
 
+=======
+{% from 'macro/form_errors.html' import form_field_errors %}
+{% block title %}{{ super() }} - 写文章{% endblock %}
+{% block header %}
+  <link rel="stylesheet" href="/assets/style/write.css">
+  {% endblock %}
+{% block content %}
+
+  <!-- // 顶部导航 -->
+>>>>>>> 0f0671da8c1f08f7141d72655d2b426353749f87
   <div class="container">
     <div class="row">
       <div class="col-md-8 col-md-offset-2">
@@ -16,12 +27,17 @@
           </div>
           <div class="form-group">
             <label class="upload-file">
+<<<<<<< HEAD
               {{ form.img }}
+=======
+                {{ form.img }}
+>>>>>>> 0f0671da8c1f08f7141d72655d2b426353749f87
               <i class="glyphicon glyphicon-camera"></i>
             </label>
           </div>
             {{ form_field_errors(form.img.errors) }}
           <div class="form-group">
+<<<<<<< HEAD
               {{ form.title }}
 
           </div>
@@ -41,6 +57,22 @@
               {{ ckeditor.load() }}
               {{ ckeditor.config(name='content') }}
 
+=======
+            {{ form.title }}
+          </div>
+            {{ form_field_errors(form.title.errors) }}
+          <div class="form-group">
+            {{ form.tags }}
+          </div>
+            {{ form_field_errors(form.tags.errors) }}
+          <div class="form-group">
+            {{ form.desc }}
+          </div>
+          <div class="form-group">
+            {{ form.content }}
+              {{ ckeditor.load() }}
+              {{ ckeditor.config(name='content') }}
+>>>>>>> 0f0671da8c1f08f7141d72655d2b426353749f87
           </div>
             {{ form_field_errors(form.content.errors) }}
         </form>
@@ -49,11 +81,17 @@
   </div>
 {% endblock %}
 
+<<<<<<< HEAD
 {% block js_extra %}
   <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
   <script src="./assets/plugins/jquery-3.4.1.min.js"></script>
   <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
   <script src="./assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+=======
+
+{% block js_extra %}
+
+>>>>>>> 0f0671da8c1f08f7141d72655d2b426353749f87
   <script>
     $(function () {
       // 文件选择后，在浏览器中预览
@@ -67,5 +105,11 @@
       })
     })
   </script>
+<<<<<<< HEAD
 
+=======
+</body>
+
+</html>
+>>>>>>> 0f0671da8c1f08f7141d72655d2b426353749f87
 {% endblock %}

@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
       <module fileurl="file://$PROJECT_DIR$/.idea/flask-qa.iml" filepath="$PROJECT_DIR$/.idea/flask-qa.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/.idea/flask在线问答系统.iml" filepath="$PROJECT_DIR$/.idea/flask在线问答系统.iml" />
+>>>>>>> 0f0671da8c1f08f7141d72655d2b426353749f87
     </modules>
   </component>
 </project>
